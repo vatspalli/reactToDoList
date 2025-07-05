@@ -1,0 +1,18 @@
+.taskItem {
+  display: flex;
+  width: 20%;
+  background: #111;
+  padding: 0.75rem;
+  margin-left: 40%;
+  margin-bottom: 0.5rem;
+  border-radius: 6px;
+  position: relative;
+}
+
+.taskItem input[type='checkbox'] {
+  margin-right: 1rem;
+}
+
+.taskItem button {
+    margin-left: 1rem;
+}
