@@ -13,7 +13,7 @@ export default function App() {
         method: 'GET',
         headers: {'Content-Type': 'application/json',}
       }
-      const response = await fetch(`${server}getTasks`, fetchOptions)
+      const response = await fetch(`${server}/getTasks`, fetchOptions)
       const data = await response.json();
       setTaskList(data);
     }

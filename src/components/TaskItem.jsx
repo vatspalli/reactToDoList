@@ -5,6 +5,7 @@ export default function TaskItem({task, updateTask, deleteTask}) {
 
     const handleChange = async (e) => {
         const isDone = e.target.checked;
+        updateTask({id: task.id, isDone})
         const fetchOptions = {
             method: 'PUT',
             headers: {'Content-Type': 'application/json',},
@@ -13,10 +14,10 @@ export default function TaskItem({task, updateTask, deleteTask}) {
         const response = await fetch(`${server}/updateTask`,fetchOptions);
         const data = await response.json();
         console.log(data);
-        updateTask({id: task.id, isDone})
     }
 
     const handleDelete = async () => {
+        deleteTask(task.id);
         const fetchOptions = {
             method: 'DELETE',
             headers: {'Content-Type': 'application/json',},
@@ -25,7 +26,6 @@ export default function TaskItem({task, updateTask, deleteTask}) {
         const response = await fetch(`${server}/deleteTask`,fetchOptions);
         const data = await response.json();
         console.log(data);
-        deleteTask(task.id);
     }
 
     return <div className="taskItem">

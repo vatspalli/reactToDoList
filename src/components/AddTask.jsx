@@ -4,7 +4,8 @@ import './addtask.css'
 export default function AddTask({addTask}) {
     const [value, setValue] = useState("");
 
-    const addTaskSubmit = async () => {
+    const addTaskSubmit = async (e) => {
+        e.preventDefault();
         if(value.trim()) {
             await addTask(value)
         }
